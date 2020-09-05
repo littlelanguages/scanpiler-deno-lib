@@ -23,7 +23,5 @@ jobs:
           deno-version: ${{ matrix.deno-version }}
       - name: Lint scanpiler-deno-lib
         run: deno fmt --check
-      - name: Build scanpiler-deno-lib
-        run: deno run --reload mod.ts
       - name: Test scanpiler-deno-lib
         run: deno test --allow-none
