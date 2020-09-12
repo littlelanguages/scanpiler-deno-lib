@@ -89,3 +89,18 @@ function maxCoordinate(c1: Coordinate, c2: Coordinate): Coordinate {
     return c1;
   }
 }
+
+export function toString(
+  location: Location,
+  fileName: string | undefined = undefined,
+): string {
+  const fileNamePrefix = (fileName == undefined) ? "" : `${fileName} `;
+
+  if (location.tag == "Coordinate") {
+    return `${fileNamePrefix}${location.line}:${location.column}`;
+  } else if (location.start.line == location.end.line) {
+    return `${fileNamePrefix}${location.start.line}:${location.start.column}-${location.end.column}`;
+  } else {
+    return `${fileNamePrefix}${location.start.line}:${location.start.column}-${location.end.line}:${location.end.column}`;
+  }
+}
