@@ -1,14 +1,6 @@
-import {
-  assertEquals,
-} from "https://deno.land/std@0.68.0/testing/asserts.ts";
+import { assertEquals } from "https://deno.land/std@0.76.0/testing/asserts.ts";
 
-import {
-  combine,
-  mkCoordinate,
-  mkRange,
-  range,
-  toString,
-} from "./location.ts";
+import { combine, mkCoordinate, mkRange, range, toString } from "./location.ts";
 
 let P1 = mkCoordinate(0, 1, 2);
 let P2 = mkCoordinate(3, 4, 5);
